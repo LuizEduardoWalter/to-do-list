@@ -40,6 +40,7 @@ function createNewTask() {
     toDoContainer.innerHTML = `
     ${toDoContainer.innerHTML} ${templateToDoItem(newTaskInput.value)}
     `;
+    newTaskInput.value = "";
     toggleScreen();
   } else {
     alert("Insira um valor válido!");
@@ -62,6 +63,7 @@ function concludeTask(id) {
     <div id="${newTaskId}" class="flex bg-white px-2 py-1 rounded-md">
               <p class="flex-1 line-through">${taskToConclude.children[0].innerHTML}</p>
               <button onclick="recoverTask(${newTaskId})">⬅️</button>
+              <button onclick="deleteTask(${newTaskId})">❌</button>
     </div>
     `;
     taskToConclude.remove();
