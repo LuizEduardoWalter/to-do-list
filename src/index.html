@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do-list</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-200 p-5">
+    <div id="listScreen" class="flex flex-col">
+      <button class="self-end" onclick="toggleScreen()">➕</button>
+
+      <section class="w-full flex justify-between gap-10">
+        <div class="w-1/2">
+          <h1>A fazer:</h1>
+          <div id="toDoContainer" class="w-full space-y-1"></div>
+        </div>
+        <div class="w-1/2">
+          <h1>Feito:</h1>
+          <div id="doneContainer" class="w-full space-y-1"></div>
+        </div>
+      </section>
+    </div>
+
+    <div id="insertTaskScreen" class="hidden justify-center gap-2">
+      <button onclick="toggleScreen()">⬅️</button>
+      <input id="newTaskInput" type="text" class="bg-white h-auto rounded-md" />
+      <button onclick="createNewTask()">➕</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
